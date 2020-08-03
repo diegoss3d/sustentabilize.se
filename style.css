@@ -1,0 +1,160 @@
+/*---------------------------------------RESET GERAL----------------------------------------------*/
+
+body, p, h1, ul, li, blockquote, input, button {
+	font-family: 'Roboto', sans-serif;
+	padding: 0;
+	margin: 0;
+	border: none;
+}
+
+li {
+	list-style: none
+}
+
+a {
+	text-decoration: none
+}
+
+body {
+	background-image: url("./img/bg-image.jpg");
+}
+
+
+/*---------------------------------------GRID GERAL----------------------------------------------*/
+
+.estrutura {
+	display: grid;
+	grid-template-columns: minmax(100px, auto) repeat(2, 1fr);
+	grid-template-areas: 
+		"header header header"
+		"sidenav main main"
+		"sidenav main main"
+		"footer footer footer";
+}
+
+.estrutura .header {
+	grid-column: 2 / -1;
+}
+
+.estrutura .bg {
+	max-width: 2560px;
+	z-index: 0;
+}
+
+/*3:07:08*/
+/*---------------------------------------HEADER----------------------------------------------*/
+
+.header {
+	grid-area: header;
+	padding: 30px;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+}
+
+.header ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	max-width: 1200px;
+}
+
+.header ul a {
+	display: block;
+	padding: 10px;
+	/*color: white;*/
+	color: #000;
+	font-size: 18px;
+	background: rgb(255, 255, 255);
+	border-radius: 5px;
+	transition: 0.2s
+}
+
+.header ul a:hover {
+	background: #006E33;
+}
+
+.header li + li {
+	margin-left: 50px;
+}
+
+/*---------------------------------------SIDENAV----------------------------------------------*/
+
+.sidenav {
+	grid-area: sidenav;
+	padding: 30px;
+}
+
+.sidenav .logo {
+	max-width: 250px;
+}
+
+.formulario form input, button{
+	display: grid;
+	grid-template-columns: 1fr;
+	min-width: 250px;
+	max-width: 1fr;
+    padding: 10px;
+    margin: 5px auto 5px auto;
+	border-radius: 3px;
+	box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+	
+}
+
+.formulario form button {
+	min-width: 270px;
+}
+
+.formulario form {
+	margin-top: 30px;
+}
+
+.formulario form p{
+	color: white;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+/*---------------------------------------MAIN----------------------------------------------*/
+
+.main {
+	grid-area: main;
+	padding: 50px;
+	margin: 50px;
+	max-width: 1200px;
+	min-width: 400px;
+	background: rgba(0, 0, 0, 0.5);
+	/*background: rgba(255, 255, 255, 0.5);*/
+	border-radius: 5px;
+	box-shadow: 5px 5px 12px 0px rgba(44, 44, 44, 0.35);
+}
+
+.content {
+	max-width: 1200px;
+	min-width: 400px;
+	color: #fafbfc;
+}
+
+.content h1 {
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+/*---------------------------------------FOOTER----------------------------------------------*/
+
+.footer {
+	display: grid;
+	grid-area: footer;	
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: linear-gradient(135deg, #045426, #006E33);
+	color: #fafbfc;
+	padding: 30px;
+}
+
+.footer p {
+	color: #f3f0f0;
+	text-align: center;
+	line-height: 22px;
+}
